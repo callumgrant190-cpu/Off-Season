@@ -1,6 +1,6 @@
 # Off-Season Training Block
 
-A single-page app for a 23-week off-season speed and fitness block (21 Sep 2026 - 28 Feb 2027).
+A single-page app for a 23-week off-season speed and fitness block (28 Sep 2026 - 7 Mar 2027), built around GAA squad training on Tuesday and Friday nights.
 Today's session, the full week, gym loads in kilos, running paces calculated from a 1 km time,
 and the January strength test.
 
@@ -31,6 +31,12 @@ and a service worker, it installs with its own icon and name, opens without brow
 offline after the first visit.
 
 On Android, Chrome offers "Install app" from the menu.
+
+## Updating an existing deployment
+
+Replace `index.html` and `sw.js`, commit and push. `sw.js` carries a `CACHE` version string; it is bumped on every
+content change so installed phones fetch the new version instead of serving the cached one. If a phone still shows the
+old plan, close the app fully and reopen it once.
 
 ## Changing the plan
 
