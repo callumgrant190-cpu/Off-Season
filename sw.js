@@ -1,4 +1,4 @@
-const CACHE = "offseason-v3";
+const CACHE = "offseason-2026-10-15-uni";
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
