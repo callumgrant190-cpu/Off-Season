@@ -428,6 +428,7 @@ function dayEvents(day, week){
   day.t.forEach(x => {
     const m = /^(\d{1,2}:\d{2})\s+(.+)$/.exec(x);
     if (!m || /\bstudy\b/i.test(m[2])) return;
+    if (/volunteer/i.test(m[2]) && wd === 0 && VOL_WEEK(week.w)) return;
     add(m[1], hhmm(tkey(m[1]) + trainMins(m[1], m[2], day)), trainKind(m[2]), m[2][0].toUpperCase() + m[2].slice(1), trainDetail(m[2], day));
   });
   const sb = studyBlocks(day, week), focus = FOCUS[week.w] || {};
